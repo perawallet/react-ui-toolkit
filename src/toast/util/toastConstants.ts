@@ -1,4 +1,4 @@
-import {ToastContextState} from "./toastTypes";
+import type {ToastContextState} from "./toastTypes";
 
 const DEFAULT_TOAST_TIMEOUT = 4000;
 

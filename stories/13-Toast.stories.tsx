@@ -1,18 +1,15 @@
 import "./utils/constants/toast/_toast.scss";
 
-import {storiesOf} from "@storybook/react";
-import React from "react";
-
-import StateProvider from "./utils/StateProvider";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import Button from "../src/button/Button";
 import FormField from "../src/form/field/FormField";
 import CheckboxInput from "../src/form/input/checkbox/CheckboxInput";
 import Input from "../src/form/input/Input";
-import Button from "../src/button/Button";
-import {useToaster} from "../src/toast/util/toastHooks";
-import StoryFragment from "./utils/StoryFragment";
 import Toast from "../src/toast/Toast";
 import {ToastContextProvider} from "../src/toast/ToastProvider";
+import {useToaster} from "../src/toast/util/toastHooks";
+import StateProvider from "./utils/StateProvider";
+import StoryFragment from "./utils/StoryFragment";
 
 function ToastExamples() {
   const {display, update, hideAll} = useToaster();
@@ -180,28 +177,47 @@ function ToastExamples() {
   );
 }
 
-storiesOf("Toast", module)
-  .add("Default props", () => (
+const meta: Meta = {
+  title: "Toast"
+};
+
+export default meta;
+
+export const DefaultProps: StoryObj = {
+  name: "Default props",
+  render: () => (
     <ToastContextProvider>
       <ToastExamples />
     </ToastContextProvider>
-  ))
-  .add("Disable autoCloseToasts for all toasts", () => (
+  )
+};
+export const DisableAutoCloseToastsForAllToasts: StoryObj = {
+  name: "Disable autoCloseToasts for all toasts",
+  render: () => (
     <ToastContextProvider autoCloseToasts={false}>
       <ToastExamples />
     </ToastContextProvider>
-  ))
-  .add("Limit number of toasts to 3", () => (
+  )
+};
+export const LimitNumberOfToastsTo3: StoryObj = {
+  name: "Limit number of toasts to 3",
+  render: () => (
     <ToastContextProvider limit={3}>
       <ToastExamples />
     </ToastContextProvider>
-  ))
-  .add("Set default autoClose timeout to 2000ms for all toasts", () => (
+  )
+};
+export const SetDefaultAutoCloseTimeoutTo2000msForAllToasts: StoryObj = {
+  name: "Set default autoClose timeout to 2000ms for all toasts",
+  render: () => (
     <ToastContextProvider defaultAutoCloseTimeout={2000}>
       <ToastExamples />
     </ToastContextProvider>
-  ))
-  .add("Set ToastProvider props dynamically with a form", () => (
+  )
+};
+export const SetToastProviderPropsDynamicallyWithAForm: StoryObj = {
+  name: "Set ToastProvider props dynamically with a form",
+  render: () => (
     <StateProvider initialState={{limit: "3", autoCloseToasts: false}}>
       {(state, setState) => (
         <StoryFragment>
@@ -237,4 +253,5 @@ storiesOf("Toast", module)
         </StoryFragment>
       )}
     </StateProvider>
-  ));
+  )
+};

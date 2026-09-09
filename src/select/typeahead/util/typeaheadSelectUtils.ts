@@ -1,4 +1,4 @@
-import {TypeaheadSelectOption} from "../../util/selectTypes";
+import type {TypeaheadSelectOption} from "../../util/selectTypes";
 
 function filterOptionsByKeyword<T extends TypeaheadSelectOption = TypeaheadSelectOption>(
   options: T[],

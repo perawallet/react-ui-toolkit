@@ -1,13 +1,19 @@
-import React, {Fragment} from "react";
-import {storiesOf} from "@storybook/react";
-
-import StateProvider from "./utils/StateProvider";
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import {Fragment} from "react";
 
 import FormField from "../src/form/field/FormField";
 import NumberInput from "../src/form/input/number/NumberInput";
+import StateProvider from "./utils/StateProvider";
 
-storiesOf("Number Input", module)
-  .add("Number Input", () => (
+const meta: Meta = {
+  title: "Number Input"
+};
+
+export default meta;
+
+export const NumberInputStory: StoryObj = {
+  name: "Number Input",
+  render: () => (
     <Fragment>
       <StateProvider initialState={{value: ""}}>
         {(state, setState) => (
@@ -50,8 +56,11 @@ storiesOf("Number Input", module)
         )}
       </StateProvider>
     </Fragment>
-  ))
-  .add("Number Input with maximumFractionDigit", () => (
+  )
+};
+export const NumberInputWithMaximumFractionDigit: StoryObj = {
+  name: "Number Input with maximumFractionDigit",
+  render: () => (
     <Fragment>
       <StateProvider initialState={{value: ""}}>
         {(state, setState) => (
@@ -92,8 +101,11 @@ storiesOf("Number Input", module)
         )}
       </StateProvider>
     </Fragment>
-  ))
-  .add("Number Input with shouldFormatToLocaleString", () => (
+  )
+};
+export const NumberInputWithShouldFormatToLocaleString: StoryObj = {
+  name: "Number Input with shouldFormatToLocaleString",
+  render: () => (
     <Fragment>
       <StateProvider initialState={{value: ""}}>
         {(state, setState) => (
@@ -142,8 +154,11 @@ storiesOf("Number Input", module)
         )}
       </StateProvider>
     </Fragment>
-  ))
-  .add("Number Input with locale", () => (
+  )
+};
+export const NumberInputWithLocale: StoryObj = {
+  name: "Number Input with locale",
+  render: () => (
     <Fragment>
       <StateProvider initialState={{value: ""}}>
         {(state, setState) => (
@@ -195,4 +210,5 @@ storiesOf("Number Input", module)
         )}
       </StateProvider>
     </Fragment>
-  ));
+  )
+};

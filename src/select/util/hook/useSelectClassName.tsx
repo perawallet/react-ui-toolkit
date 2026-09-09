@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import {SelectContextValue} from "../selectTypes";
+import type {SelectContextValue} from "../selectTypes";
 
 /**
  * A hook that returns the class name for the select component.

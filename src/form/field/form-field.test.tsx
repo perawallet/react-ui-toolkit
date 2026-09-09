@@ -1,10 +1,10 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import {testA11y} from "../../core/utils/test/testUtils";
-import FormField, {FormFieldProps} from "./FormField";
 import Input from "../input/Input";
+import type {FormFieldProps} from "./FormField";
+import FormField from "./FormField";
 
 type FormFieldTestProps = Omit<FormFieldProps, "id"> & {testid: string};
 

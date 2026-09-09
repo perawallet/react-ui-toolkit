@@ -1,9 +1,8 @@
-import React from "react";
 import {render} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import DateTimer from "./DateTimer";
-import {DateTimerProps} from "./util/dateTimerTypes";
+import type {DateTimerProps} from "./util/dateTimerTypes";
 
 const TWO = 2;
 

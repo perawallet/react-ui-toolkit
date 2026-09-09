@@ -1,7 +1,7 @@
-import React from "react";
+import type React from "react";
 
 import {isMobileDevice} from "../../../../core/utils/device/deviceUtils";
-import {ParseNumberOptions} from "../../../../core/utils/number/numberTypes";
+import type {ParseNumberOptions} from "../../../../core/utils/number/numberTypes";
 import {
   formatNumber,
   getNegativeZero,
@@ -12,13 +12,13 @@ import {
   parseNumber,
   removeLeadingZeros
 } from "../../../../core/utils/number/numberUtils";
-import {NumberInputFormatProps, NumberInputLocaleProps} from "./numberInputTypes";
+import type {NumberInputFormatProps, NumberInputLocaleProps} from "./numberInputTypes";
 
 function isNumberInputLocalizationAllowed() {
   try {
     // We should only activate it for desktops and if `Intl` API is supported
     return !isMobileDevice() && isIntlAPISupported();
-  } catch (error) {
+  } catch {
     return false;
   }
 }
@@ -194,10 +194,10 @@ function delocalizeNumberInputValue({
 }
 
 export {
+  delocalizeNumberInputValue,
+  getIsValidNumberInputMaxFractionDigits,
   getNumberInputFormatProps,
   getNumberInputParseNumberOptions,
-  getIsValidNumberInputMaxFractionDigits,
   isNumberInputValueNotAValidNumber,
-  localizeNumberInputValue,
-  delocalizeNumberInputValue
+  localizeNumberInputValue
 };

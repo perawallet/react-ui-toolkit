@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import React, {forwardRef} from "react";
+import type React from "react";
+import {forwardRef} from "react";
 
 export type SelectGroupProps = Omit<React.HTMLAttributes<HTMLDivElement>, "className"> & {
   customClassName?: string;

@@ -1,10 +1,10 @@
-import React, {createContext, useReducer, useEffect} from "react";
-
+import type React from "react";
+import {createContext, useEffect, useReducer} from "react";
+import {isNonNegativeNumber} from "../core/utils/number/numberUtils";
 import ToastStack from "./stack/ToastStack";
 import {DEFAULT_TOAST_TIMEOUT, initialToastState} from "./util/toastConstants";
 import toastReducer from "./util/toastReducer";
-import {ToastAction, ToastContextState} from "./util/toastTypes";
-import {isNonNegativeNumber} from "../core/utils/number/numberUtils";
+import type {ToastAction, ToastContextState} from "./util/toastTypes";
 
 const ToastStateContext = createContext<null | ToastContextState>(null);
 const ToastDispatchContext = createContext<null | React.Dispatch<ToastAction>>(null);
@@ -67,4 +67,4 @@ function ToastContextProvider({
   );
 }
 
-export {ToastDispatchContext, ToastStateContext, ToastContextProvider};
+export {ToastContextProvider, ToastDispatchContext, ToastStateContext};

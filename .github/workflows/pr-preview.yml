@@ -27,11 +27,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
 
       - name: Install dependencies and build storybook
         run: |
-          npm install
+          npm ci
           npm run storybook:build
 
       - name: Deploy storybook build to GitHub Pages

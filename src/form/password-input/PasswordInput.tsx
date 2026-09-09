@@ -1,11 +1,11 @@
 import "./_password-input.scss";
 
-import React, {useState} from "react";
 import classNames from "classnames";
-
-import Input from "../input/Input";
-import {InputProps} from "../input/util/inputTypes";
+import type React from "react";
+import {useState} from "react";
 import Button from "../../button/Button";
+import Input from "../input/Input";
+import type {InputProps} from "../input/util/inputTypes";
 
 export interface PasswordInputProps extends Omit<InputProps, "leftIcon" | "rightIcon"> {
   hideIcon?: React.ReactNode;

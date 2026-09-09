@@ -1,18 +1,24 @@
 import "./utils/constants/select/_select-story-constants.scss";
 
-import React, {Fragment} from "react";
-import {storiesOf} from "@storybook/react";
-
-import Select from "../src/select/Select";
-import StateProvider from "./utils/StateProvider";
-import {initialState} from "./utils/constants/select/selectStoryConstants";
-import List from "../src/list/List";
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import {Fragment} from "react";
 import ListItem from "../src/list/item/ListItem";
+import List from "../src/list/List";
+import Select from "../src/select/Select";
 import Tag from "../src/tag/Tag";
+import {initialState} from "./utils/constants/select/selectStoryConstants";
+import StateProvider from "./utils/StateProvider";
 import {handleMultiSelect} from "./utils/selectStoryUtils";
 
-storiesOf("Select", module)
-  .add("Select - Single Select", () => (
+const meta: Meta = {
+  title: "Select"
+};
+
+export default meta;
+
+export const SelectSingleSelect: StoryObj = {
+  name: "Select - Single Select",
+  render: () => (
     <Fragment>
       <p>{"Single Select - Basic"}</p>
       <StateProvider initialState={initialState.basic}>
@@ -158,8 +164,11 @@ storiesOf("Select", module)
         )}
       </StateProvider>
     </Fragment>
-  ))
-  .add("Select - Multi Select", () => (
+  )
+};
+export const SelectMultiSelect: StoryObj = {
+  name: "Select - Multi Select",
+  render: () => (
     <Fragment>
       <p>{"Multi Select - Basic"}</p>
 
@@ -246,4 +255,5 @@ storiesOf("Select", module)
         )}
       </StateProvider>
     </Fragment>
-  ));
+  )
+};

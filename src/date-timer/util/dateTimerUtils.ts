@@ -1,5 +1,5 @@
-import {RemainingTimeBreakdown} from "../../core/utils/time/timeTypes";
-import {DateTimerItem, DateTimerProps} from "./dateTimerTypes";
+import type {RemainingTimeBreakdown} from "../../core/utils/time/timeTypes";
+import type {DateTimerItem, DateTimerProps} from "./dateTimerTypes";
 
 function generateDateTimerItems(
   {

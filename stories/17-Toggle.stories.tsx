@@ -1,12 +1,17 @@
-import {storiesOf} from "@storybook/react";
-import React from "react";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
 import {Toggle} from "../src/toggle/Toggle";
 import {initialState} from "./utils/constants/toggle/toggleStoryOptionConstants";
 import StateProvider from "./utils/StateProvider";
 
-storiesOf("Toggle", module)
-  .add("Toggle", () => {
+const meta: Meta = {
+  title: "Toggle"
+};
+
+export default meta;
+
+export const ToggleStory: StoryObj = {
+  name: "Toggle",
+  render: () => {
     return (
       <div style={{width: "500px"}}>
         <span>{"Switch Toggle - 2 Options"}</span>
@@ -66,8 +71,11 @@ storiesOf("Toggle", module)
         </StateProvider>
       </div>
     );
-  })
-  .add("Toggle Multiple", () => (
+  }
+};
+export const ToggleMultiple: StoryObj = {
+  name: "Toggle Multiple",
+  render: () => (
     <div style={{width: "500px"}}>
       <span>{"Toggle - Multiple"}</span>
 
@@ -110,4 +118,5 @@ storiesOf("Toggle", module)
         }
       `}</style>
     </div>
-  ));
+  )
+};

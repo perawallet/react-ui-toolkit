@@ -1,10 +1,10 @@
-import React from "react";
-import {render, fireEvent, screen} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../core/utils/test/testUtils";
-import ListItem, {ListItemProps} from "./ListItem";
+import type {ListItemProps} from "./ListItem";
+import ListItem from "./ListItem";
 
 describe("<ListItem />", () => {
   const defaultListItemProps: ListItemProps = {

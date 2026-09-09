@@ -1,11 +1,10 @@
 import "./_radio-group.scss";
 
-import React from "react";
 import classNames from "classnames";
-
-import RadioInput, {RadioInputItem, RadioInputSelectHandler} from "../RadioInput";
-import List from "../../../../list/List";
 import ListItem from "../../../../list/item/ListItem";
+import List from "../../../../list/List";
+import type {RadioInputItem, RadioInputSelectHandler} from "../RadioInput";
+import RadioInput from "../RadioInput";
 
 export interface RadioGroupProps<Id = string, Context = any> {
   items: RadioInputItem<Id, Context>[];

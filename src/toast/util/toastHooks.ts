@@ -3,7 +3,7 @@ import {useCallback, useContext} from "react";
 import {generateRandomString} from "../../core/utils/string/stringUtils";
 import {ToastItemContext} from "../ToastItemContext";
 import {ToastDispatchContext, ToastStateContext} from "../ToastProvider";
-import {ToastContextState, ToastData} from "./toastTypes";
+import type {ToastContextState, ToastData} from "./toastTypes";
 
 /**
  * @returns {Object} Current value of ToastContextState

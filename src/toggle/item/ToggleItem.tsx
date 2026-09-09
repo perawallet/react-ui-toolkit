@@ -1,10 +1,9 @@
 import "./_toggle-item.scss";
 
-import React from "react";
 import classNames from "classnames";
-
-import {useToggle} from "../util/ToggleContext";
+import type React from "react";
 import ListItem from "../../list/item/ListItem";
+import {useToggle} from "../util/ToggleContext";
 
 export interface ToggleItemProps {
   children: React.ReactNode;

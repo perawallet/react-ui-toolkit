@@ -1,26 +1,19 @@
+import type {JSX} from "react";
 import "./_select.scss";
-
-import React, {
-  ForwardedRef,
-  forwardRef,
-  Ref,
-  useImperativeHandle,
-  useReducer,
-  useRef
-} from "react";
-
+import type {ForwardedRef, Ref} from "react";
+import {forwardRef, useImperativeHandle, useReducer, useRef} from "react";
+import useOnClickOutside from "../core/utils/hooks/useOnClickOutside";
 import SelectContent from "./content/SelectContent";
 import SelectGroup from "./group/SelectGroup";
 import SelectItem from "./item/SelectItem";
+import SelectItemList from "./item-list/SelectItemList";
 import SelectTrigger from "./trigger/SelectTrigger";
+import {SelectContext, SelectDispatchContext} from "./util/context/SelectContext";
+import {selectStateReducer} from "./util/context/SelectContext.reducer";
 import useSelectClassName from "./util/hook/useSelectClassName";
 import useSelectKeyDown from "./util/hook/useSelectKeyDown";
-import {Option, SelectProps} from "./util/selectTypes";
+import type {Option, SelectProps} from "./util/selectTypes";
 import {generateSelectState} from "./util/selectUtils";
-import SelectItemList from "./item-list/SelectItemList";
-import {selectStateReducer} from "./util/context/SelectContext.reducer";
-import {SelectContext, SelectDispatchContext} from "./util/context/SelectContext";
-import useOnClickOutside from "../core/utils/hooks/useOnClickOutside";
 
 function SelectComponent<T extends Option = Option>(
   props: SelectProps<T>,

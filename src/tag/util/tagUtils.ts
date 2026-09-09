@@ -1,5 +1,5 @@
-import {TypeaheadSelectOption} from "../../select/util/selectTypes";
-import {TagShape} from "../Tag";
+import type {TypeaheadSelectOption} from "../../select/util/selectTypes";
+import type {TagShape} from "../Tag";
 
 function mapOptionToTagShape<T extends TypeaheadSelectOption = TypeaheadSelectOption>(
   option: T

@@ -1,7 +1,8 @@
 import "./_select-content.scss";
 
 import classNames from "classnames";
-import React, {forwardRef} from "react";
+import type React from "react";
+import {forwardRef} from "react";
 
 import {useSelectContext} from "../util/context/SelectContext";
 

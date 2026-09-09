@@ -1,9 +1,8 @@
-import utcToZonedTime from "date-fns-tz/utcToZonedTime";
-import timezonedFormat from "date-fns-tz/format";
-import formatWithOptions from "date-fns/fp/formatWithOptions";
-import enCA from "date-fns/locale/en-CA";
+import {formatWithOptions} from "date-fns/fp";
+import {enCA} from "date-fns/locale";
+import {format as timezonedFormat, toZonedTime} from "date-fns-tz";
 
-import {DateTimerProps, TimerType} from "../../../date-timer/util/dateTimerTypes";
+import type {DateTimerProps, TimerType} from "../../../date-timer/util/dateTimerTypes";
 import {
   DATE_FORMAT,
   DAY_IN_HRS,
@@ -14,7 +13,7 @@ import {
   MINUTE_IN_S,
   SECOND_IN_MS
 } from "./timeConstants";
-import {FormatDateUtilOptions, RemainingTimeBreakdown} from "./timeTypes";
+import type {FormatDateUtilOptions, RemainingTimeBreakdown} from "./timeTypes";
 
 function sortDateRange(initialRange: Date[]): Date[] {
   const range = [initialRange[0], initialRange[1]];
@@ -62,7 +61,7 @@ function calculateRemainingTimeBreakdown(
  *    the following Date object is created for "2007-05-16": Tue May 15 2007 20:00:00 GMT-0400 (Eastern Daylight Time) {}.
  *    Therefore, 15 May appears on the screen. By passing `new Date("2007-05-16")` value to `compensateForTimezone` utility, we fix this problem.
  *
- *    When the timezone information is passed to `formatDateWithOptions`, this extra compensation is redundant as `date-fns-tz/utcToZonedTime` handles it correctly.
+ *    When the timezone information is passed to `formatDateWithOptions`, this extra compensation is redundant as `toZonedTime` handles it correctly.
  *
  * @param {object} options FormatDateUtilOptions
  * @return {string} Formatted date
@@ -79,7 +78,7 @@ function formatDateWithOptions(options: FormatDateUtilOptions) {
     let dateToFormat = date;
 
     if (timeZone) {
-      if (isProvidedDateInUTC) dateToFormat = utcToZonedTime(date, timeZone);
+      if (isProvidedDateInUTC) dateToFormat = toZonedTime(date, timeZone);
     } else if (shouldShiftDateToCompensateForTimezone) {
       dateToFormat = compansateForTimezone(date);
     }
@@ -222,10 +221,10 @@ function formatTimeStringTo12hFormatWithMeridiem(timeString: string) {
 
 export {
   calculateRemainingTimeBreakdown,
-  formatDateWithOptions,
   compansateForTimezone,
-  parseTime,
-  getHourMinuteMeridiemFromTimeString,
+  formatDateWithOptions,
   formatTimeStringTo12hFormatWithMeridiem,
+  getHourMinuteMeridiemFromTimeString,
+  parseTime,
   sortDateRange
 };

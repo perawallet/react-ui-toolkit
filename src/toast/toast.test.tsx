@@ -1,12 +1,12 @@
-import React from "react";
-import {render, screen} from "@testing-library/react";
 import {waitFor} from "@testing-library/dom";
+import {render, screen} from "@testing-library/react";
+import type React from "react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {Button, Toast, ToastContextProvider, useToaster} from "..";
-import {ToastContextState} from "./util/toastTypes";
 import {DEFAULT_TOAST_TIMEOUT} from "./util/toastConstants";
+import type {ToastContextState} from "./util/toastTypes";
 
 const testToastContentText = "This is a test toast";
 

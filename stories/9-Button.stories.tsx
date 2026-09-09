@@ -1,26 +1,31 @@
-import React from "react";
-import {storiesOf} from "@storybook/react";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import {useEffect, useRef} from "react";
 import Button from "../src/button/Button";
 import FileUploadButton from "../src/button/file-upload/FileUploadButton";
-import StoryFragment from "./utils/StoryFragment";
-import StateProvider from "./utils/StateProvider";
 import SpinnerStorySample from "./utils/constants/spinner/SpinnerStorySample";
-import {useEffect, useRef} from "@storybook/addons";
+import StateProvider from "./utils/StateProvider";
+import StoryFragment from "./utils/StoryFragment";
 
-storiesOf("Button", module)
-  .add("Button", () => {
+const meta: Meta = {
+  title: "Button"
+};
+
+export default meta;
+
+export const ButtonStory: StoryObj = {
+  name: "Button",
+  render: () => {
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     return (
       <StoryFragment>
-        <Button type={"button"} onClick={(e) => alert("Thank You!")}>
+        <Button type={"button"} onClick={() => alert("Thank You!")}>
           {"Click Me"}
         </Button>
 
         <br />
 
-        <Button type={"button"} onClick={(e) => alert("Thank You!")} isDisabled={true}>
+        <Button type={"button"} onClick={() => alert("Thank You!")} isDisabled={true}>
           {"Click Me - isDisabled"}
         </Button>
 
@@ -41,7 +46,7 @@ storiesOf("Button", module)
 
         <Button
           type={"button"}
-          onClick={(e) => alert("Thank You!")}
+          onClick={() => alert("Thank You!")}
           shouldDisplaySpinner={true}
           customSpinner={<SpinnerStorySample />}>
           {"Click Me - shouldDisplaySpinner - customSpinner"}
@@ -59,8 +64,11 @@ storiesOf("Button", module)
         </Button>
       </StoryFragment>
     );
-  })
-  .add("Upload Button", () => {
+  }
+};
+export const UploadButton: StoryObj = {
+  name: "Upload Button",
+  render: () => {
     const fileUploadButtonRef = useRef<HTMLLabelElement | null>(null);
 
     useEffect(() => {
@@ -148,4 +156,5 @@ storiesOf("Button", module)
         </FileUploadButton>
       </StoryFragment>
     );
-  });
+  }
+};

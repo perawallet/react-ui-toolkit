@@ -1,6 +1,7 @@
-import {createContext, Dispatch, useContext} from "react";
+import type {Dispatch} from "react";
+import {createContext, useContext} from "react";
 
-import {SelectContextValue, SelectStateAction} from "../selectTypes";
+import type {SelectContextValue, SelectStateAction} from "../selectTypes";
 
 const SelectContext = createContext<null | SelectContextValue>(null);
 const SelectDispatchContext = createContext<null | Dispatch<SelectStateAction>>(null);
@@ -31,4 +32,4 @@ function useSelectDispatchContext() {
   return dispatch;
 }
 
-export {useSelectContext, useSelectDispatchContext, SelectContext, SelectDispatchContext};
+export {SelectContext, SelectDispatchContext, useSelectContext, useSelectDispatchContext};

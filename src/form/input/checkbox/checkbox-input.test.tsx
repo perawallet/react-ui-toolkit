@@ -1,10 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-
-import CheckboxInput, {CheckboxInputProps} from "./CheckboxInput";
 import {testA11y} from "../../../core/utils/test/testUtils";
+import type {CheckboxInputProps} from "./CheckboxInput";
+import CheckboxInput from "./CheckboxInput";
 
 describe("<CheckboxInput />", () => {
   const defaultCheckboxInputProps: CheckboxInputProps = {

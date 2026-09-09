@@ -1,11 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-
-import {NumberInputProps} from "./util/numberInputTypes";
 import {testA11y} from "../../../core/utils/test/testUtils";
 import NumberInput from "./NumberInput";
+import type {NumberInputProps} from "./util/numberInputTypes";
 
 describe('<NumberInput type={"number"} />', () => {
   const numberInputProps: NumberInputProps = {

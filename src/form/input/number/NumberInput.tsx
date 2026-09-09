@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 
 import Input from "../Input";
-import {NumberInputProps} from "./util/numberInputTypes";
+import type {NumberInputProps} from "./util/numberInputTypes";
 import {
   delocalizeNumberInputValue,
   getIsValidNumberInputMaxFractionDigits,

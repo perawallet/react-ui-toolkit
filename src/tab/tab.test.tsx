@@ -1,10 +1,9 @@
-import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import {TabItem, TabProps} from "./Tab";
 import {Tab} from "..";
 import {testA11y} from "../core/utils/test/testUtils";
+import type {TabItem, TabProps} from "./Tab";
 
 const tabItems: TabItem[] = [
   {

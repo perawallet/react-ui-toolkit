@@ -1,12 +1,18 @@
-import React, {Fragment} from "react";
-import {storiesOf} from "@storybook/react";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import {Fragment} from "react";
 import FormField from "../src/form/field/FormField";
 import Input from "../src/form/input/Input";
 import StoryFragment from "./utils/StoryFragment";
 
-storiesOf("Input", module)
-  .add("Input", () => (
+const meta: Meta = {
+  title: "Input"
+};
+
+export default meta;
+
+export const InputStory: StoryObj = {
+  name: "Input",
+  render: () => (
     <Fragment>
       <Input
         name={"fullName"}
@@ -23,8 +29,11 @@ storiesOf("Input", module)
         isDisabled={true}
       />
     </Fragment>
-  ))
-  .add("Input with FormField", () => (
+  )
+};
+export const InputWithFormField: StoryObj = {
+  name: "Input with FormField",
+  render: () => (
     <StoryFragment>
       <FormField labelledBy={"Full Name"} label={"Full Name"}>
         <Input
@@ -61,4 +70,5 @@ storiesOf("Input", module)
         />
       </FormField>
     </StoryFragment>
-  ));
+  )
+};

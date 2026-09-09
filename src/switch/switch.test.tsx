@@ -1,10 +1,10 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../core/utils/test/testUtils";
-import Switch, {SwitchProps} from "./Switch";
+import type {SwitchProps} from "./Switch";
+import Switch from "./Switch";
 
 describe("<Switch />", () => {
   const defaultSwitchProps: SwitchProps = {

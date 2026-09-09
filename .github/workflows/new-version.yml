@@ -1,9 +1,10 @@
 name: "New Version Actions"
 
 on:
-  push:
-    branches: # only trigger when a commit was pushed to main
-      - main
+  # Manual only. This repository is a fork consumed directly from git, and the
+  # package name still belongs to the upstream npm scope, so pushes to `main`
+  # must not publish. Run this deliberately if a release is ever intended.
+  workflow_dispatch:
 
 permissions:
   # Used by `create-release` to create a new release on the repo after publishing to npm.
@@ -19,10 +20,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.0.0
+          node-version: 24
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build

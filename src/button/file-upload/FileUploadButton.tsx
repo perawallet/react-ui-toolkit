@@ -1,7 +1,7 @@
-import React from "react";
 import classNames from "classnames";
-
-import FileInput, {FileInputProps} from "../../form/input/file/FileInput";
+import React from "react";
+import type {FileInputProps} from "../../form/input/file/FileInput";
+import FileInput from "../../form/input/file/FileInput";
 
 export type FileUploadButtonProps = Omit<FileInputProps, "onChange"> & {
   customLabelClassName?: string;

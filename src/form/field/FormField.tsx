@@ -1,11 +1,10 @@
 import "./_form-field.scss";
 
-import React from "react";
 import classNames from "classnames";
-
-import FormFieldMessage from "./message/FormFieldMessage";
-import List from "../../list/List";
+import type React from "react";
 import ListItem from "../../list/item/ListItem";
+import List from "../../list/List";
+import FormFieldMessage from "./message/FormFieldMessage";
 
 export interface FormFieldProps {
   children: React.ReactNode;

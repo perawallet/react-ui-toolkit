@@ -1,4 +1,4 @@
-import {SelectOwnState, SelectProps, SelectContextValue} from "./selectTypes";
+import type {SelectContextValue, SelectOwnState, SelectProps} from "./selectTypes";
 
 /**
  * Generates select state from provided props.

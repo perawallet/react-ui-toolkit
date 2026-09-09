@@ -1,7 +1,7 @@
 import "./_list-item.scss";
 
-import React from "react";
 import classNames from "classnames";
+import type React from "react";
 
 import {KEYBOARD_EVENT_KEY} from "../../core/utils/keyboard/keyboardEventConstants";
 

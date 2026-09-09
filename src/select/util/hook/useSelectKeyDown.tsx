@@ -1,7 +1,8 @@
-import React, {useCallback} from "react";
+import type React from "react";
+import {useCallback} from "react";
 
 import {KEYBOARD_EVENT_KEY} from "../../../core/utils/keyboard/keyboardEventConstants";
-import {SelectContextValue, SelectStateAction} from "../selectTypes";
+import type {SelectContextValue, SelectStateAction} from "../selectTypes";
 
 /**
  * A hook for handle select key down event.
@@ -50,10 +51,7 @@ function useSelectKeyDown(
             event.stopPropagation();
             event.preventDefault();
 
-            if (
-              Boolean(options[focusedOptionIndex]) &&
-              !options[focusedOptionIndex]?.isDisabled
-            ) {
+            if (options[focusedOptionIndex] && !options[focusedOptionIndex]?.isDisabled) {
               onSelect(options[focusedOptionIndex]);
 
               if (shouldCloseOnSelect) {

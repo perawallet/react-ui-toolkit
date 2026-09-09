@@ -1,15 +1,19 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import ProgressBar, {ProgressBarProps} from "./ProgressBar";
 import {testA11y} from "../core/utils/test/testUtils";
+import type {ProgressBarProps} from "./ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 describe("<ProgressBar />", () => {
   const defaultProgressBarProps: ProgressBarProps = {
     testid: "progress-bar",
     percentage: 57,
-    style: {backgroundColor: "blue", completedColor: "yellow", trackColor: "orange"},
+    style: {
+      backgroundColor: "rgb(0, 0, 255)",
+      completedColor: "rgb(255, 255, 0)",
+      trackColor: "rgb(255, 165, 0)"
+    },
     ariaLabel: "Progress bar"
   };
 

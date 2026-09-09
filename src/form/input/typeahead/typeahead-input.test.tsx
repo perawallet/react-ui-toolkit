@@ -1,10 +1,10 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
-import TypeaheadInput, {TypeaheadInputProps} from "./TypeaheadInput";
+import type {TypeaheadInputProps} from "./TypeaheadInput";
+import TypeaheadInput from "./TypeaheadInput";
 
 describe("<TypeaheadInput />", () => {
   const defaultTypeaheadInputProps: TypeaheadInputProps = {

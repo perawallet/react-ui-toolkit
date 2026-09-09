@@ -1,19 +1,14 @@
+import type {JSX} from "react";
 import CheckIcon from "../../ui/icons/check.svg";
 
 import "./_select-item.scss";
 
 import classNames from "classnames";
-import React, {
-  ForwardedRef,
-  forwardRef,
-  Ref,
-  useImperativeHandle,
-  useLayoutEffect,
-  useRef
-} from "react";
-
-import {SelectItemElement, Option} from "../util/selectTypes";
+import type React from "react";
+import type {ForwardedRef, Ref} from "react";
+import {forwardRef, useImperativeHandle, useLayoutEffect, useRef} from "react";
 import {useSelectContext, useSelectDispatchContext} from "../util/context/SelectContext";
+import type {Option, SelectItemElement} from "../util/selectTypes";
 
 export interface SelectItemProps<T extends Option = Option> {
   option: T | null;

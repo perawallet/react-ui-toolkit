@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from "uuid";
 
-import {ListProps} from "../List";
+import type {ListProps} from "../List";
 
 function generateListItemKey<Item = any>({
   listItemKeyGenerator,

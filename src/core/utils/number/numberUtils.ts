@@ -4,7 +4,7 @@ import {
   DEFAULT_NUMERALS,
   DEFAULT_THOUSANDTHS_SEPARATOR
 } from "./numberConstants";
-import {FormatNumberOptions, ParseNumberOptions} from "./numberTypes";
+import type {FormatNumberOptions, ParseNumberOptions} from "./numberTypes";
 
 /**
  * @param {number} limit The number of digits in decimal part of a number
@@ -43,7 +43,8 @@ function isIntlAPISupported() {
 function formatNumber(formatNumberOptions: FormatNumberOptions) {
   const {locale, ...otherOptions} = formatNumberOptions;
   const options = {
-    style: "decimal",
+    // widening to `string` breaks Intl.NumberFormatOptions["style"], a literal union
+    style: "decimal" as const,
     ...otherOptions
   };
 
@@ -56,7 +57,7 @@ function formatNumber(formatNumberOptions: FormatNumberOptions) {
       locale || [NAVIGATOR_LANGUAGE, "en-GB"],
       options
     );
-  } catch (error) {
+  } catch {
     numberFormatter = {
       format(x: number | bigint) {
         return x.toLocaleString(locale);
@@ -227,16 +228,16 @@ function isNonNegativeNumber(x: unknown): x is number {
 }
 
 export {
-  truncateDecimalPart,
+  formatNumber,
+  getDigit,
+  getNegativeZero,
+  getNumberSeparators,
+  getThousandthSeparatorCount,
   isInteger,
   isIntlAPISupported,
-  formatNumber,
-  parseNumber,
-  getDigit,
-  getNumberSeparators,
-  getNegativeZero,
+  isNonNegativeNumber,
   mapDigitsToLocalVersion,
+  parseNumber,
   removeLeadingZeros,
-  getThousandthSeparatorCount,
-  isNonNegativeNumber
+  truncateDecimalPart
 };

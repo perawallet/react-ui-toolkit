@@ -1,7 +1,9 @@
+import type {JSX} from "react";
 import "./_list.scss";
 
-import React, {Fragment, Ref} from "react";
 import classNames from "classnames";
+import type {Ref} from "react";
+import React, {Fragment} from "react";
 
 import {generateListItemKey} from "./util/listUtils";
 
@@ -25,7 +27,7 @@ export interface ListProps<Item = any> {
 
 export type ListElementType = Extract<keyof JSX.IntrinsicElements, "ul" | "ol" | "dl">;
 
-function ListComponent<Item extends any>(
+function ListComponent<Item>(
   {
     items,
     children,

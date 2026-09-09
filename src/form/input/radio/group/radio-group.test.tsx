@@ -1,9 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import RadioGroup, {RadioGroupProps} from "./RadioGroup";
 import {testA11y} from "../../../../core/utils/test/testUtils";
+import type {RadioGroupProps} from "./RadioGroup";
+import RadioGroup from "./RadioGroup";
 
 describe("<RadioGroup />", () => {
   const radioGroupItems: RadioGroupProps["items"] = [

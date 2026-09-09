@@ -2,10 +2,10 @@ import CheckIcon from "../../../ui/icons/check.svg";
 
 import "./_checkbox-input.scss";
 
-import React from "react";
 import classNames from "classnames";
+import type React from "react";
 
-import {RadioInputItem} from "../../..";
+import type {RadioInputItem} from "../../..";
 
 export interface CheckboxInputProps {
   item: RadioInputItem;

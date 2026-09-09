@@ -1,7 +1,8 @@
 import classNames from "classnames";
-import React, {forwardRef, useImperativeHandle, useRef} from "react";
-
-import Button, {ButtonProps} from "../../button/Button";
+import type React from "react";
+import {forwardRef, useImperativeHandle, useRef} from "react";
+import type {ButtonProps} from "../../button/Button";
+import Button from "../../button/Button";
 import {useSelectContext, useSelectDispatchContext} from "../util/context/SelectContext";
 
 import "./_select-trigger.scss";

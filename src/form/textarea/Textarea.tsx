@@ -1,8 +1,10 @@
 import "./_textarea.scss";
 
-import React, {useState} from "react";
 import classNames from "classnames";
-import TextareaAutosize, {TextareaAutosizeProps} from "react-textarea-autosize";
+import type React from "react";
+import {useState} from "react";
+import type {TextareaAutosizeProps} from "react-textarea-autosize";
+import TextareaAutosize from "react-textarea-autosize";
 
 import {KEYBOARD_EVENT_KEY} from "../../core/utils/keyboard/keyboardEventConstants";
 

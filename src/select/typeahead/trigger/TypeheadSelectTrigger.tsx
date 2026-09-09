@@ -1,12 +1,13 @@
 import "./_typehead-select-trigger.scss";
 
 import classNames from "classnames";
-import React from "react";
+import type React from "react";
 
 import ListItem from "../../../list/item/ListItem";
-import Tag, {TagShape} from "../../../tag/Tag";
-import Select from "../../Select";
 import List from "../../../list/List";
+import type {TagShape} from "../../../tag/Tag";
+import Tag from "../../../tag/Tag";
+import Select from "../../Select";
 
 export interface TypeheadSelectTriggerProps {
   tags: TagShape[];

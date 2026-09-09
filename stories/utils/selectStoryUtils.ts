@@ -1,4 +1,4 @@
-import {initialState} from "./constants/select/selectStoryConstants";
+import type {initialState} from "./constants/select/selectStoryConstants";
 
 function handleMultiSelect(
   state: typeof initialState.multiSelect,

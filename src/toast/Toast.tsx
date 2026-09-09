@@ -1,11 +1,10 @@
-import React, {useLayoutEffect} from "react";
 import classNames from "classnames";
-
-import {useToaster, useToastContextState} from "./util/toastHooks";
-import {ToastContextState} from "./util/toastTypes";
+import {useLayoutEffect} from "react";
 import ListItem from "../list/item/ListItem";
 import ToastCloseButton from "./close-button/ToastCloseButton";
 import {ToastItemContext} from "./ToastItemContext";
+import {useToastContextState, useToaster} from "./util/toastHooks";
+import type {ToastContextState} from "./util/toastTypes";
 
 export interface ToastProps {
   testid: string;

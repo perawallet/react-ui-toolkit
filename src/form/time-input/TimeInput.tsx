@@ -1,11 +1,10 @@
-import React from "react";
 import classNames from "classnames";
-
-import Input from "../input/Input";
+import type React from "react";
+import useDebounce from "../../core/utils/hooks/useDebounce";
 import {DATE_FORMAT} from "../../core/utils/time/timeConstants";
 import {formatDateWithOptions, parseTime} from "../../core/utils/time/timeUtils";
-import {InputProps} from "../input/util/inputTypes";
-import useDebounce from "../../core/utils/hooks/useDebounce";
+import Input from "../input/Input";
+import type {InputProps} from "../input/util/inputTypes";
 
 export type TimeInputProps = Omit<
   InputProps,

@@ -1,10 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-
-import PasswordInput, {PasswordInputProps} from "../password-input/PasswordInput";
 import {testA11y} from "../../core/utils/test/testUtils";
+import type {PasswordInputProps} from "../password-input/PasswordInput";
+import PasswordInput from "../password-input/PasswordInput";
 
 describe("<PasswordInput />", () => {
   const defaultPasswordInputProps: PasswordInputProps = {

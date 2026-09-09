@@ -1,9 +1,8 @@
-import {useEffect, useRef, useState, useLayoutEffect} from "react";
-
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import type {DateTimerProps, TimerType} from "../../../date-timer/util/dateTimerTypes";
 import {SECOND_IN_MS} from "../time/timeConstants";
-import {RemainingTimeBreakdown} from "../time/timeTypes";
+import type {RemainingTimeBreakdown} from "../time/timeTypes";
 import {calculateRemainingTimeBreakdown} from "../time/timeUtils";
-import {DateTimerProps, TimerType} from "../../../date-timer/util/dateTimerTypes";
 
 /**
  * A React Hook that provides a date timer
@@ -25,13 +24,13 @@ function useDateTimer({
   onEnd?: DateTimerProps["onEnd"];
 }): RemainingTimeBreakdown {
   const counterForIntervalRef = useRef(0);
-  const interval = useRef<NodeJS.Timeout>();
+  const interval = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
   const [dateTimer, setDateTimer] = useState<RemainingTimeBreakdown>(
     calculateRemainingTimeBreakdown(range, counterForIntervalRef.current, timerType)
   );
   const [rangeStart, rangeEnd] = range;
 
-  const savedOnEndCallback = useRef<typeof onEnd>();
+  const savedOnEndCallback = useRef<typeof onEnd>(undefined);
 
   useLayoutEffect(() => {
     savedOnEndCallback.current = onEnd;

@@ -1,10 +1,10 @@
-import React from "react";
-import {render, screen, fireEvent} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import Button, {ButtonProps} from "./Button";
 import {testA11y} from "../core/utils/test/testUtils";
+import type {ButtonProps} from "./Button";
+import Button from "./Button";
 
 describe("<Button />", () => {
   const defaultButtonProps: ButtonProps = {

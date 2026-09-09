@@ -1,6 +1,6 @@
 import {useCallback, useState} from "react";
 
-import {Option} from "../selectTypes";
+import type {Option} from "../selectTypes";
 
 /**
  * A hook to handle default single select behavior.

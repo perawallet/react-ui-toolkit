@@ -1,7 +1,7 @@
 import "./_toggle.scss";
 
-import React from "react";
 import classNames from "classnames";
+import type React from "react";
 
 import ToggleItem from "./item/ToggleItem";
 import {ToggleContext} from "./util/ToggleContext";

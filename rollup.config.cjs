@@ -1,16 +1,15 @@
+const path = require("path");
 const typescript = require("rollup-plugin-typescript2");
 const terser = require("@rollup/plugin-terser");
-const {eslint} = require("rollup-plugin-eslint");
 const postcss = require("rollup-plugin-postcss");
-const stylelint = require("rollup-plugin-stylelint").default;
-const reactSvg = require("rollup-plugin-react-svg");
-const path = require("path");
+const svgr = require("@svgr/rollup");
 
 module.exports = [
   {
     external: [
       "react",
       "react-dom",
+      "react/jsx-runtime",
       "classnames",
       "react-textarea-autosize",
       "uuid",
@@ -50,18 +49,13 @@ module.exports = [
       format: "cjs"
     },
     plugins: [
-      reactSvg(),
-      terser(),
-      eslint({
-        fix: true,
-        exclude: ["./src/**/**.scss", "./src/**/**.svg"]
-      }),
-      stylelint(),
+      (svgr.default || svgr)(),
       postcss({extract: path.resolve("dist/main.css")}),
       typescript({
-        exclude: ["**/__tests__/**", "node_modules"],
+        exclude: ["**/*.test.ts", "**/*.test.tsx", "**/__mocks__/**", "node_modules"],
         clean: true
-      })
+      }),
+      terser()
     ]
   }
 ];

@@ -1,6 +1,4 @@
-import React from "react";
-import {storiesOf} from "@storybook/react";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
 import ProgressBar from "../src/progress-bar/ProgressBar";
 
 const colors = {
@@ -17,8 +15,15 @@ const progressBarStory = (
 `}</style>
 );
 
-storiesOf("Progress Bar", module)
-  .add("Progress Bar With Different Percentages", () => (
+const meta: Meta = {
+  title: "Progress Bar"
+};
+
+export default meta;
+
+export const ProgressBarWithDifferentPercentages: StoryObj = {
+  name: "Progress Bar With Different Percentages",
+  render: () => (
     <div style={{maxWidth: "350px"}}>
       <span>{"Empty"}</span>
 
@@ -55,8 +60,11 @@ storiesOf("Progress Bar", module)
         }}
       />
     </div>
-  ))
-  .add("Progress Bar With Height Overridden by CSS", () => (
+  )
+};
+export const ProgressBarWithHeightOverriddenByCSS: StoryObj = {
+  name: "Progress Bar With Height Overridden by CSS",
+  render: () => (
     <div style={{maxWidth: "350px"}}>
       <span>{"Empty"}</span>
 
@@ -100,8 +108,11 @@ storiesOf("Progress Bar", module)
 
       {progressBarStory}
     </div>
-  ))
-  .add("Progress Bar With Children", () => (
+  )
+};
+export const ProgressBarWithChildren: StoryObj = {
+  name: "Progress Bar With Children",
+  render: () => (
     <div style={{maxWidth: "350px"}}>
       <ProgressBar
         percentage={0}
@@ -139,4 +150,5 @@ storiesOf("Progress Bar", module)
 
       {progressBarStory}
     </div>
-  ));
+  )
+};

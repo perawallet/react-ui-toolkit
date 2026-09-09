@@ -1,87 +1,94 @@
-import {storiesOf} from "@storybook/react";
-import React from "react";
-
+import type {Meta, StoryObj} from "@storybook/react-vite";
 import DateTimer from "../src/date-timer/DateTimer";
 import StoryFragment from "./utils/StoryFragment";
 
-storiesOf("DateTimer", module).add("DateTimer", () => (
-  <StoryFragment>
-    <span>{"Between Tomorrow and 3 Days Later"}</span>
+const meta: Meta = {
+  title: "DateTimer"
+};
 
-    <DateTimer
-      range={[calculateFutureDate(1, "day"), calculateFutureDate(3, "day")]}
-      alwaysShowSeconds={true}
-      onEnd={handleDateTimerEnd}
-    />
+export default meta;
 
-    <DateTimer
-      range={[calculateFutureDate(1, "day"), calculateFutureDate(3, "day")]}
-      titleMap={{
-        days: "d",
-        hours: "h",
-        minutes: "m",
-        seconds: "s"
-      }}
-      alwaysShowSeconds={true}
-      onEnd={handleDateTimerEnd}
-    />
+export const DateTimerStory: StoryObj = {
+  name: "DateTimer",
+  render: () => (
+    <StoryFragment>
+      <span>{"Between Tomorrow and 3 Days Later"}</span>
 
-    <hr />
+      <DateTimer
+        range={[calculateFutureDate(1, "day"), calculateFutureDate(3, "day")]}
+        alwaysShowSeconds={true}
+        onEnd={handleDateTimerEnd}
+      />
 
-    <span>{"Since `Jan 10 2022` - timerType=`up`"}</span>
+      <DateTimer
+        range={[calculateFutureDate(1, "day"), calculateFutureDate(3, "day")]}
+        titleMap={{
+          days: "d",
+          hours: "h",
+          minutes: "m",
+          seconds: "s"
+        }}
+        alwaysShowSeconds={true}
+        onEnd={handleDateTimerEnd}
+      />
 
-    <DateTimer
-      range={[new Date("Jan 10 2022")]}
-      alwaysShowSeconds={true}
-      onEnd={handleDateTimerEnd}
-      timerType={"up"}
-    />
+      <hr />
 
-    <hr />
+      <span>{"Since `Jan 10 2022` - timerType=`up`"}</span>
 
-    <span>{"1 Day Later - Show Seconds - timerInterval=`5`"}</span>
+      <DateTimer
+        range={[new Date("Jan 10 2022")]}
+        alwaysShowSeconds={true}
+        onEnd={handleDateTimerEnd}
+        timerType={"up"}
+      />
 
-    <DateTimer
-      range={[calculateFutureDate(1, "day")]}
-      alwaysShowSeconds={true}
-      onEnd={handleDateTimerEnd}
-      timerInterval={5}
-    />
+      <hr />
 
-    <hr />
+      <span>{"1 Day Later - Show Seconds - timerInterval=`5`"}</span>
 
-    <span>{"17 Hours Later"}</span>
+      <DateTimer
+        range={[calculateFutureDate(1, "day")]}
+        alwaysShowSeconds={true}
+        onEnd={handleDateTimerEnd}
+        timerInterval={5}
+      />
 
-    <DateTimer
-      range={[calculateFutureDate(17, "hour")]}
-      alwaysShowSeconds={true}
-      onEnd={handleDateTimerEnd}
-    />
+      <hr />
 
-    <hr />
+      <span>{"17 Hours Later"}</span>
 
-    <span>{"1 Minute Later"}</span>
+      <DateTimer
+        range={[calculateFutureDate(17, "hour")]}
+        alwaysShowSeconds={true}
+        onEnd={handleDateTimerEnd}
+      />
 
-    <DateTimer range={[calculateFutureDate(1, "minute")]} onEnd={handleDateTimerEnd} />
+      <hr />
 
-    <hr />
+      <span>{"1 Minute Later"}</span>
 
-    <span>{"10 Seconds Later"}</span>
+      <DateTimer range={[calculateFutureDate(1, "minute")]} onEnd={handleDateTimerEnd} />
 
-    <DateTimer range={[calculateFutureDate(10, "second")]} onEnd={handleDateTimerEnd} />
+      <hr />
 
-    <span>{"10 Seconds Later with 5s timer interval"}</span>
+      <span>{"10 Seconds Later"}</span>
 
-    <DateTimer
-      range={[calculateFutureDate(10, "second")]}
-      onEnd={handleDateTimerEnd}
-      timerInterval={5}
-    />
-  </StoryFragment>
-));
+      <DateTimer range={[calculateFutureDate(10, "second")]} onEnd={handleDateTimerEnd} />
+
+      <span>{"10 Seconds Later with 5s timer interval"}</span>
+
+      <DateTimer
+        range={[calculateFutureDate(10, "second")]}
+        onEnd={handleDateTimerEnd}
+        timerInterval={5}
+      />
+    </StoryFragment>
+  )
+};
 
 function calculateFutureDate(value: number, unit: "day" | "hour" | "minute" | "second") {
-  let currentDate = new Date();
+  const currentDate = new Date();
 
   if (unit === "day") {
     currentDate.setDate(currentDate.getDate() + value);

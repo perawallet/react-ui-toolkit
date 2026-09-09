@@ -1,24 +1,23 @@
-import CaretDownIcon from "../../ui/icons/caret-down.svg";
-
-import React, {useState, useEffect, useRef} from "react";
 import classNames from "classnames";
 
-import TypeaheadInput, {
-  TypeaheadInputProps
-} from "../../form/input/typeahead/TypeaheadInput";
-import {mapOptionsToTagShapes} from "../../tag/util/tagUtils";
-import {TagShape} from "../../tag/Tag";
-import {filterOptionsByKeyword} from "./util/typeaheadSelectUtils";
+import type React from "react";
+import {useEffect, useRef, useState} from "react";
 import {filterOutItemsByKey} from "../../core/utils/array/arrayUtils";
-import Spinner from "../../spinner/Spinner";
 import {KEYBOARD_EVENT_KEY} from "../../core/utils/keyboard/keyboardEventConstants";
-import {
+import type {TypeaheadInputProps} from "../../form/input/typeahead/TypeaheadInput";
+import TypeaheadInput from "../../form/input/typeahead/TypeaheadInput";
+import Spinner from "../../spinner/Spinner";
+import type {TagShape} from "../../tag/Tag";
+import {mapOptionsToTagShapes} from "../../tag/util/tagUtils";
+import CaretDownIcon from "../../ui/icons/caret-down.svg";
+import Select from "../Select";
+import type {
   Option,
   TypeaheadSelectOption,
   TypeaheadSelectOptionSelectHandler
 } from "../util/selectTypes";
-import Select from "../Select";
 import TypeheadSelectTrigger from "./trigger/TypeheadSelectTrigger";
+import {filterOptionsByKeyword} from "./util/typeaheadSelectUtils";
 
 import "./_typeahead-select.scss";
 

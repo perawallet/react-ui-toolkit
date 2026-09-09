@@ -1,7 +1,7 @@
 import "./_description-term.scss";
 
-import React from "react";
 import classNames from "classnames";
+import React from "react";
 
 export interface DescriptionTermProps {
   title: string;

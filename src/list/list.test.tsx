@@ -1,10 +1,10 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import {testA11y} from "../core/utils/test/testUtils";
-import List, {ListProps} from "./List";
 import ListItem from "./item/ListItem";
+import type {ListProps} from "./List";
+import List from "./List";
 
 describe("<List />", () => {
   const listItems = ["Hipo", "Labs"];

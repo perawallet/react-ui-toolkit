@@ -1,7 +1,7 @@
 import "./_radio-input.scss";
 
-import React from "react";
 import classNames from "classnames";
+import type React from "react";
 
 export interface RadioInputItem<Id = string, Context = any> {
   id: Id;

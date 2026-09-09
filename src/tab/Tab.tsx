@@ -1,10 +1,10 @@
 import "./_tab.scss";
 
-import React, {useState} from "react";
 import classNames from "classnames";
-
-import TabHeaderItem from "./header/item/TabHeaderItem";
+import type React from "react";
+import {useState} from "react";
 import List from "../list/List";
+import TabHeaderItem from "./header/item/TabHeaderItem";
 
 export type TabItem = {
   id: string;

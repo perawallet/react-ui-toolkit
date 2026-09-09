@@ -1,4 +1,4 @@
-import {SelectOwnState, SelectStateAction} from "../selectTypes";
+import type {SelectOwnState, SelectStateAction} from "../selectTypes";
 
 function selectStateReducer(state: SelectOwnState, action: SelectStateAction) {
   let newState = state;

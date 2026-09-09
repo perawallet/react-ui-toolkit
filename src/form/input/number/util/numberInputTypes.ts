@@ -1,4 +1,4 @@
-import {InputProps} from "../../util/inputTypes";
+import type {InputProps} from "../../util/inputTypes";
 
 export type NumberInputFormatProps = {
   locale?: string;

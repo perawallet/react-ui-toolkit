@@ -1,10 +1,12 @@
-import React, {forwardRef, Ref} from "react";
 import classNames from "classnames";
-
-import {Option} from "../util/selectTypes";
-import List, {ListElementType} from "../../list/List";
+import type React from "react";
+import type {JSX, Ref} from "react";
+import {forwardRef} from "react";
+import type {ListProps} from "../..";
+import type {ListElementType} from "../../list/List";
+import List from "../../list/List";
 import Select from "../Select";
-import {ListProps} from "../..";
+import type {Option} from "../util/selectTypes";
 
 export type SelectItemListProps<T extends Option = Option> = {
   options: T[];
@@ -23,7 +25,7 @@ function SelectItemListComponent<T extends Option = Option>(
     <List
       ref={ref}
       items={options}
-      customClassName={(classNames("select-item-list"), customClassName)}
+      customClassName={classNames("select-item-list", customClassName)}
       {...listProps}>
       {(option, listItemTestId) => (
         <Select.Item

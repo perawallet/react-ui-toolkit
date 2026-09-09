@@ -1,9 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
-import FormFieldMessage, {FormFieldMessageProps} from "./FormFieldMessage";
+import type {FormFieldMessageProps} from "./FormFieldMessage";
+import FormFieldMessage from "./FormFieldMessage";
 
 describe("<FormFieldMessage />", () => {
   const defaultFormFieldMessageProps: FormFieldMessageProps = {

@@ -1,15 +1,15 @@
 import "./_date-timer.scss";
 
-import React, {useEffect} from "react";
 import classNames from "classnames";
+import {useEffect} from "react";
 
 import useDateTimer from "../core/utils/hooks/useDateTimer";
-import List from "../list/List";
-import ListItem from "../list/item/ListItem";
-import {generateDateTimerItems} from "./util/dateTimerUtils";
-import {DateTimerProps} from "./util/dateTimerTypes";
-import {sortDateRange} from "../core/utils/time/timeUtils";
 import {SECOND_IN_MS} from "../core/utils/time/timeConstants";
+import {sortDateRange} from "../core/utils/time/timeUtils";
+import ListItem from "../list/item/ListItem";
+import List from "../list/List";
+import type {DateTimerProps} from "./util/dateTimerTypes";
+import {generateDateTimerItems} from "./util/dateTimerUtils";
 
 function DateTimer({
   testid,

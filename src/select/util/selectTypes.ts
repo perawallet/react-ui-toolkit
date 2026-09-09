@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 
 interface Option {
   id: string;
@@ -53,14 +53,14 @@ type SelectStateAction =
   | {type: "SET_FOCUSED_OPTION_INDEX"; payload: number};
 
 export type {
-  SelectContextValue,
   Option,
-  SelectRole,
   OptionSelectHandler,
-  SelectProps,
-  SelectStateAction,
-  SelectOwnState,
+  SelectContextValue,
   SelectItemElement,
+  SelectOwnState,
+  SelectProps,
+  SelectRole,
+  SelectStateAction,
   TypeaheadSelectOption,
   TypeaheadSelectOptionSelectHandler
 };

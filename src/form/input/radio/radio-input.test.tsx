@@ -1,10 +1,10 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
-import RadioInput, {RadioInputProps} from "./RadioInput";
+import type {RadioInputProps} from "./RadioInput";
+import RadioInput from "./RadioInput";
 
 describe("<RadioInput />", () => {
   const defaultRadioInputProps: RadioInputProps<string, any> = {

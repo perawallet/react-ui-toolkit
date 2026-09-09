@@ -1,12 +1,10 @@
-import React, {Fragment} from "react";
-import {storiesOf} from "@storybook/react";
-
-import List from "../src/list/List";
-import ListItem from "../src/list/item/ListItem";
-import DescriptionTerm, {
-  DescriptionTermProps
-} from "../src/list/description-term/DescriptionTerm";
+import type {Meta, StoryObj} from "@storybook/react-vite";
+import {Fragment} from "react";
 import Button from "../src/button/Button";
+import type {DescriptionTermProps} from "../src/list/description-term/DescriptionTerm";
+import DescriptionTerm from "../src/list/description-term/DescriptionTerm";
+import ListItem from "../src/list/item/ListItem";
+import List from "../src/list/List";
 import StateProvider from "./utils/StateProvider";
 
 const users = [
@@ -141,15 +139,25 @@ function RemovableUserListItem({user, onRemove}) {
   );
 }
 
-storiesOf("List", module)
-  .add("Has Items", () => (
+const meta: Meta = {
+  title: "List"
+};
+
+export default meta;
+
+export const HasItems: StoryObj = {
+  name: "Has Items",
+  render: () => (
     <Fragment>
       <List items={users}>{(item) => <UserListItem user={item} />}</List>
 
       {style}
     </Fragment>
-  ))
-  .add("Has Placeholder", () => (
+  )
+};
+export const HasPlaceholder: StoryObj = {
+  name: "Has Placeholder",
+  render: () => (
     <Fragment>
       <List
         items={emptyUsers}
@@ -162,8 +170,11 @@ storiesOf("List", module)
 
       {style}
     </Fragment>
-  ))
-  .add("Empty State", () => (
+  )
+};
+export const EmptyState: StoryObj = {
+  name: "Empty State",
+  render: () => (
     <Fragment>
       <List
         items={emptyUsers}
@@ -174,15 +185,21 @@ storiesOf("List", module)
         {(item) => <UserListItem user={item} />}
       </List>
     </Fragment>
-  ))
-  .add("Clickable Items", () => (
+  )
+};
+export const ClickableItems: StoryObj = {
+  name: "Clickable Items",
+  render: () => (
     <Fragment>
       <List items={users}>{(item) => <ClickableUserListItem user={item} />}</List>
 
       {style}
     </Fragment>
-  ))
-  .add("Ordered List", () => (
+  )
+};
+export const OrderedList: StoryObj = {
+  name: "Ordered List",
+  render: () => (
     <Fragment>
       <List items={users} type={"ordered"}>
         {(item) => <UserListItem user={item} />}
@@ -190,15 +207,21 @@ storiesOf("List", module)
 
       {style}
     </Fragment>
-  ))
-  .add("Description List", () => (
+  )
+};
+export const DescriptionList: StoryObj = {
+  name: "Description List",
+  render: () => (
     <Fragment>
       <List items={terms} type={"description"}>
         {(item) => <DescriptionTerm title={item.title} description={item.description} />}
       </List>
     </Fragment>
-  ))
-  .add("Removable Items", () => (
+  )
+};
+export const RemovableItems: StoryObj = {
+  name: "Removable Items",
+  render: () => (
     <StateProvider initialState={users}>
       {(state, setState) => (
         <List items={state}>
@@ -211,4 +234,5 @@ storiesOf("List", module)
         </List>
       )}
     </StateProvider>
-  ));
+  )
+};

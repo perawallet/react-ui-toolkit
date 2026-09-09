@@ -1,10 +1,10 @@
-import React from "react";
 import {fireEvent, render, screen, within} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import TypeaheadSelect, {TypeaheadSelectProps} from "./TypeaheadSelect";
 import {testA11y} from "../../core/utils/test/testUtils";
+import type {TypeaheadSelectProps} from "./TypeaheadSelect";
+import TypeaheadSelect from "./TypeaheadSelect";
 
 describe("<TypeaheadSelect />", () => {
   const defaultTypeaheadSelectProps: TypeaheadSelectProps = {

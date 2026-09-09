@@ -1,4 +1,4 @@
-import {RemainingTimeBreakdown} from "../../core/utils/time/timeTypes";
+import type {RemainingTimeBreakdown} from "../../core/utils/time/timeTypes";
 
 export type TimerType = "down" | "up";
 

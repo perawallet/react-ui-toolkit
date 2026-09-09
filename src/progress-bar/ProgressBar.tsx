@@ -1,7 +1,7 @@
 import "./_progress-bar.scss";
 
-import React from "react";
 import classNames from "classnames";
+import type React from "react";
 
 const MAX_VALUE = 100;
 

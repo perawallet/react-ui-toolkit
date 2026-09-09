@@ -4,8 +4,8 @@ import {
 } from "../../core/utils/array/arrayUtils";
 import {not} from "../../core/utils/function/functionUtils";
 import {isNonNegativeNumber} from "../../core/utils/number/numberUtils";
-import {initialToastState} from "./toastConstants";
-import {ToastAction} from "./toastTypes";
+import type {initialToastState} from "./toastConstants";
+import type {ToastAction} from "./toastTypes";
 import {isSameToast} from "./toastUtils";
 
 type ToastState = typeof initialToastState;

@@ -1,9 +1,9 @@
 import "./_input.scss";
 
-import React from "react";
 import classNames from "classnames";
+import React from "react";
 
-import {InputProps} from "./util/inputTypes";
+import type {InputProps} from "./util/inputTypes";
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {

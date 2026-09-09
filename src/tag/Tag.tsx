@@ -1,11 +1,10 @@
 import "./_tag.scss";
 
-import CloseIcon from "../ui/icons/close.svg";
-
-import React from "react";
 import classNames from "classnames";
 
+import type React from "react";
 import {KEYBOARD_EVENT_KEY} from "../core/utils/keyboard/keyboardEventConstants";
+import CloseIcon from "../ui/icons/close.svg";
 
 export interface TagShape<Context = any> {
   id: string;

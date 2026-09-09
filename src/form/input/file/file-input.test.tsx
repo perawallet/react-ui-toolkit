@@ -1,9 +1,9 @@
-import React from "react";
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
-import FileInput, {FileInputProps} from "./FileInput";
+import type {FileInputProps} from "./FileInput";
+import FileInput from "./FileInput";
 
 describe("<FileInput />", () => {
   const defaultFileInputProps: FileInputProps = {

@@ -1,10 +1,8 @@
 import "./_tab-header-item.scss";
 
-import React from "react";
 import classNames from "classnames";
-
-import {TabItem} from "../../Tab";
 import ListItem from "../../../list/item/ListItem";
+import type {TabItem} from "../../Tab";
 
 type TabHeaderItemProps = {
   tab: TabItem;

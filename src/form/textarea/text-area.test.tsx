@@ -1,9 +1,9 @@
-import React from "react";
-import {render, fireEvent, screen} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import {testA11y} from "../../core/utils/test/testUtils";
-import Textarea, {TextareaProps} from "./Textarea";
+import type {TextareaProps} from "./Textarea";
+import Textarea from "./Textarea";
 
 describe("<TextArea />", () => {
   const defaultTextAreaProps: TextareaProps = {
