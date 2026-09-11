@@ -20,7 +20,8 @@
   border: 1px solid #dfe3ef;
   border-radius: var(--select-trigger-border-radius);
 
-  &:focus {
+  &:focus,
+  &:focus-within {
     /* stylelint-disable-next-line color-no-hex */
     border: 1px solid #6c6e76;
   }

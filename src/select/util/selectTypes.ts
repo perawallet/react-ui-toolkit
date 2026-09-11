@@ -50,6 +50,7 @@ type SelectValue<T extends Option> = T | T[] | null;
 
 type SelectStateAction =
   | {type: "TOGGLE_MENU_VISIBILITY"}
+  | {type: "OPEN_MENU"}
   | {type: "SET_FOCUSED_OPTION_INDEX"; payload: number};
 
 export type {

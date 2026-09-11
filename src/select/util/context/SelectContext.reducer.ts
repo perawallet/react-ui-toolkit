@@ -13,6 +13,13 @@ function selectStateReducer(state: SelectOwnState, action: SelectStateAction) {
 
       break;
 
+    case "OPEN_MENU":
+      if (!state.isMenuOpen) {
+        newState = {...state, isMenuOpen: true, focusedOptionIndex: -1};
+      }
+
+      break;
+
     case "SET_FOCUSED_OPTION_INDEX":
       newState = {...state, focusedOptionIndex: action.payload};
       break;

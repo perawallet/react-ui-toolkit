@@ -16,6 +16,7 @@ export interface SelectItemProps<T extends Option = Option> {
   customClassName?: string;
   onKeyDown?: (option: T | null, event: React.KeyboardEvent<SelectItemElement>) => void;
   as?: keyof Pick<JSX.IntrinsicElements, "div" | "li">;
+  testid?: string;
 }
 
 function SelectItemComponent<T extends Option = Option>(
@@ -24,7 +25,8 @@ function SelectItemComponent<T extends Option = Option>(
     children,
     customClassName,
     onKeyDown,
-    as: WrapperElement = "div"
+    as: WrapperElement = "div",
+    testid
   }: SelectItemProps<T>,
   ref?: ForwardedRef<SelectItemElement>
 ) {
@@ -62,6 +64,7 @@ function SelectItemComponent<T extends Option = Option>(
       className={selectItemClassName}
       role={"option"}
       id={option?.id}
+      data-testid={testid}
       tabIndex={option?.isDisabled ? -1 : 0}
       aria-selected={isSelected}
       onClick={handleClick}

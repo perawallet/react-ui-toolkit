@@ -9,10 +9,11 @@ import {useSelectContext} from "../util/context/SelectContext";
 export interface SelectContentProps {
   children: React.ReactNode;
   customClassName?: string;
+  testid?: string;
 }
 
 function SelectContentComponent(
-  {children, customClassName}: SelectContentProps,
+  {children, customClassName, testid}: SelectContentProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const {isMenuOpen} = useSelectContext();
@@ -21,7 +22,11 @@ function SelectContentComponent(
   });
 
   return (
-    <div ref={ref} hidden={!isMenuOpen} className={selectContentClassName}>
+    <div
+      ref={ref}
+      hidden={!isMenuOpen}
+      className={selectContentClassName}
+      data-testid={testid}>
       {children}
     </div>
   );

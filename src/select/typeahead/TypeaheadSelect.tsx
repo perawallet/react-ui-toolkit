@@ -70,7 +70,6 @@ function TypeaheadSelect<T extends TypeaheadSelectOption = TypeaheadSelectOption
 }: TypeaheadSelectProps<T>) {
   const typeaheadInputRef = useRef<HTMLInputElement | null>(null);
 
-  const [isMenuOpen, setMenuVisibility] = useState(false);
   const [computedDropdownOptions, setComputedDropdownOptions] = useState(options);
   const [shouldFocusOnInput, setShouldFocusOnInput] = useState(false);
   const [keyword, setKeyword] = useState(initialKeyword);
@@ -88,8 +87,7 @@ function TypeaheadSelect<T extends TypeaheadSelectOption = TypeaheadSelectOption
 
   const typeaheadSelectClassName = classNames("typeahead-select", customClassName, {
     "typeahead-select--has-selected-options": Boolean(selectedOptions.length),
-    "typeahead-select--can-select-multiple": canSelectMultiple,
-    "typeahead-select--is-dropdown-menu-open": isMenuOpen
+    "typeahead-select--can-select-multiple": canSelectMultiple
   });
   const spinnerContent = customSpinner || (
     <Spinner customClassName={"typeahead-select__spinner"} />
@@ -133,6 +131,7 @@ function TypeaheadSelect<T extends TypeaheadSelectOption = TypeaheadSelectOption
       <TypeheadSelectTrigger
         tags={shouldDisplaySelectedOptions ? tags : []}
         handleTagRemove={handleRemove}
+        canOpenMenu={canOpenDropdownMenu}
         input={
           !shouldDisplayOnlyTags && (
             <TypeaheadInput
@@ -148,16 +147,16 @@ function TypeaheadSelect<T extends TypeaheadSelectOption = TypeaheadSelectOption
               rightIcon={
                 areOptionsFetching ? spinnerContent : <CaretDownIcon aria-hidden={true} />
               }
-              onFocus={handleTypeaheadInputFocus}
+              onFocus={typeaheadProps.onFocus}
               isDisabled={isDisabled}
             />
           )
         }
       />
 
-      <Select.Content>
-        {computedDropdownOptions.map((option) => (
-          <Select.Item key={option.id} option={option}>
+      <Select.Content testid={testid}>
+        {computedDropdownOptions.map((option, index) => (
+          <Select.Item key={option.id} option={option} testid={`${testid}.item-${index}`}>
             {option.title}
           </Select.Item>
         ))}
@@ -171,20 +170,6 @@ function TypeaheadSelect<T extends TypeaheadSelectOption = TypeaheadSelectOption
       </Select.Content>
     </Select>
   );
-
-  function openDropdownMenu() {
-    setMenuVisibility(true);
-  }
-
-  function handleTypeaheadInputFocus(event: React.FocusEvent<HTMLInputElement>) {
-    if (canOpenDropdownMenu && !isDisabled) {
-      openDropdownMenu();
-    }
-
-    if (typeaheadProps.onFocus) {
-      typeaheadProps.onFocus(event);
-    }
-  }
 
   function handleSelect(option: T) {
     if (!shouldDisplayOnlyTags && !isDisabled) {
