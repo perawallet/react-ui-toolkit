@@ -1,0 +1,68 @@
+version: 2
+
+# Mirrors perawallet/PeraBackend's setup, scaled to this repo's two ecosystems.
+#
+# ONE PR PER DEPENDENCY, with one exception. Grouping is tempting and rots: a group PR is
+# recreated every run with the accumulated backlog, closing it does not suppress those versions,
+# and a single bad package blocks every other bump in the PR. The `types` group below is the
+# exception because @types/react and @types/react-dom are released in lockstep and a mismatched
+# pair fails type-check, so they genuinely have to move together.
+#
+# `labels` must name labels that ALREADY EXIST. Dependabot does not create them; it comments
+# "The following labels could not be found" and skips them. `dependencies` and `ci` were created
+# for this repo.
+#
+# `cooldown` holds a new release for a week before opening a PR, so a version that gets unpublished
+# or immediately patched never reaches review.
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: build(npm)
+      prefix-development: build(npm-dev)
+    cooldown:
+      default-days: 7
+    labels:
+      - dependencies
+    groups:
+      types:
+        patterns:
+          - "@types/react"
+          - "@types/react-dom"
+    ignore:
+      # ts-jest declares `typescript: ">=4.3 <7"`, so TypeScript 7 cannot resolve here however
+      # willing the rest of the toolchain is. rollup-plugin-typescript2 also drives the .d.ts
+      # emit through the compiler API, which TS 7 removed. Revisit when ts-jest widens its peer
+      # range; until then a TS 7 PR is unmergeable and would be reopened every week.
+      - dependency-name: typescript
+        versions: [">= 7"]
+      # react and react-dom are peerDependencies here: the consuming app picks the version, and
+      # this package deliberately supports 17, 18 and 19. Bumping the devDependency used for
+      # tests and Storybook is a deliberate act, not a weekly chore.
+      - dependency-name: react
+      - dependency-name: react-dom
+
+  # Keeps the pinned action SHAs in release.yml fresh. Without this, pinning to a commit means
+  # never receiving that action's security fixes.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: build(actions)
+    cooldown:
+      default-days: 7
+    labels:
+      - dependencies
+      - ci
