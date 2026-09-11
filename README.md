@@ -1,23 +1,28 @@
-# @hipo/react-ui-toolkit 🧩
+# @perawallet/react-ui-toolkit 🧩
 
-Bakers' React based UI Toolkit
+Pera Wallet's React based UI Toolkit.
+
+A fork of [studiobakers/react-ui-toolkit](https://github.com/studiobakers/react-ui-toolkit)
+by [Studio Bakers](https://github.com/studiobakers) (formerly Hipo), published upstream as
+[@hipo/react-ui-toolkit](https://www.npmjs.com/package/@hipo/react-ui-toolkit). See
+[Credits](#credits).
 
 ## Getting started
 
 First, install the package via npm:
 
 ```bash
-npm install @hipo/react-ui-toolkit
+npm install @perawallet/react-ui-toolkit
 ```
 
 After installing the package you should import the main CSS file to gather the initial styles of the components, and then import the components you want to use in your project.:
 
 ```javascript
-import {FormField, Input} from "@hipo/react-ui-toolkit/dist/Input";
+import {FormField, Input} from "@perawallet/react-ui-toolkit/dist/Input";
 
 // This import required to gather the initial styles of the components
 // You can do it while bootstrapping your app
-import "@hipo/react-ui-toolkit/dist/main.css";
+import "@perawallet/react-ui-toolkit/dist/main.css";
 
 function LoginForm() {
   return (
@@ -87,7 +92,17 @@ npm run storybook:build
 
 ### Production Build
 
-The production deployment is automated by GitHub Actions. Check the [.github/workflows/new-version.yml](/.github/workflows/new-version.yml) file for more information.
+Releases are automated by GitHub Actions. Pushing a `v*` tag whose version matches
+`package.json` runs the gates (lint, type-check, tests, build, production audit) and publishes to
+npm with provenance. See [.github/workflows/release.yml](/.github/workflows/release.yml).
+
+```bash
+# after the version bump is merged
+git tag v2.0.0 && git push origin v2.0.0
+```
+
+A tag ending in a hyphenated prerelease (`v2.1.0-beta.1`) publishes under the `beta` dist-tag
+instead of `latest`.
 
 ---
 
@@ -98,3 +113,16 @@ npm run build
 ```
 
 This will generate a `dist` folder that contains the compiled components.
+
+## Credits
+
+This project is a fork of [**studiobakers/react-ui-toolkit**](https://github.com/studiobakers/react-ui-toolkit),
+created and maintained by [Studio Bakers](https://github.com/studiobakers) (formerly Hipo) and
+published on npm as [@hipo/react-ui-toolkit](https://www.npmjs.com/package/@hipo/react-ui-toolkit).
+Every component here originates from their work.
+
+The fork exists so Pera Wallet can ship changes it needs on its own schedule — currently React 19,
+date-fns 4, Storybook 10 and Biome. It is published under the `@perawallet` scope because the
+`@hipo` scope belongs to the upstream authors.
+
+The original MIT licence and copyright notice are retained verbatim in [LICENSE](/LICENSE).

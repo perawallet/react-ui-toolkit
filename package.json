@@ -1,8 +1,26 @@
 {
-  "name": "@hipo/react-ui-toolkit",
+  "name": "@perawallet/react-ui-toolkit",
   "version": "2.0.0",
-  "description": "Bakers Studio's React based UI toolkit.",
+  "description": "Pera Wallet's React based UI toolkit. Fork of Studio Bakers' @hipo/react-ui-toolkit.",
+  "license": "MIT",
+  "author": "",
+  "homepage": "https://github.com/perawallet/react-ui-toolkit#readme",
+  "bugs": {
+    "url": "https://github.com/perawallet/react-ui-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perawallet/react-ui-toolkit.git"
+  },
   "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
@@ -41,8 +59,6 @@
       "stylelint --fix"
     ]
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "2.5.12",
     "@rollup/plugin-terser": "1.0.0",
