@@ -1,0 +1,1 @@
+import"./react-BGJ90fIb.js";import"./react-dom-DkMnPoh_.js";import{at as e,ot as t}from"./DocsRenderer-JROSPFPF-CmrI_QOL.js";t();export{e as createCopyToClipboardFunction};

@@ -1,0 +1,10 @@
+import{a as e,n as t}from"./rolldown-runtime-sJBDdmOt.js";import{t as n}from"./jsx-runtime-MKhVqBIO.js";import{t as r}from"./classnames-DQoS6hca.js";import{n as i,t as a}from"./check-CrUlzvd3.js";function o({item:e,onSelect:t,customClassName:n,isSelected:r,isDisabled:i,customIcon:o,testid:l}){let{inputProps:{name:u,value:d,htmlFor:f},content:p}=e,m=(0,s.default)(`checkbox-input-label`,n,{"checkbox-input-label--is-selected":r,"checkbox-input-label--is-disabled":i});return(0,c.jsxs)(`label`,{"data-testid":l,htmlFor:f,className:m,children:[(0,c.jsx)(`input`,{type:`checkbox`,id:f,name:u,value:d,className:`checkbox-input`,onChange:h,checked:r,disabled:i}),(0,c.jsx)(`span`,{className:`checkbox-input-label__icon`,children:o||(0,c.jsx)(a,{})}),p]});function h(n){t(e,n)}}var s,c;function l(){return(l=t((()=>{i(),s=e(r()),c=n(),o.__docgenInfo={description:``,methods:[],displayName:`CheckboxInput`,props:{item:{required:!0,tsType:{name:`RadioInputComponentItem`,elements:[{name:`Id`},{name:`Context`}],raw:`RadioInputComponentItem<
+  Id,
+  Context
+>`},description:``},onSelect:{required:!0,tsType:{name:`signature`,type:`function`,raw:`(
+  item: RadioInputItem,
+  event?: React.SyntheticEvent<HTMLInputElement>
+) => void`,signature:{arguments:[{type:{name:`RadioInputComponentItem`,elements:[{name:`Id`},{name:`Context`}],raw:`RadioInputComponentItem<
+  Id,
+  Context
+>`},name:`item`},{type:{name:`ReactSyntheticEvent`,raw:`React.SyntheticEvent<HTMLInputElement>`,elements:[{name:`HTMLInputElement`}]},name:`event`}],return:{name:`void`}}},description:``},isSelected:{required:!0,tsType:{name:`boolean`},description:``},isDisabled:{required:!1,tsType:{name:`boolean`},description:``},customIcon:{required:!1,tsType:{name:`ReactReactNode`,raw:`React.ReactNode`},description:``},customClassName:{required:!1,tsType:{name:`string`},description:``},testid:{required:!1,tsType:{name:`string`},description:``}}}})))()}export{l as n,o as t};

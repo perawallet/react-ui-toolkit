@@ -1,0 +1,1 @@
+.date-timer{grid-template-columns:repeat(auto-fit,60px);width:100%;display:grid}.date-timer-box{flex-direction:column;align-items:center;display:flex}.date-timer-box__title{margin-top:8px}.date-timer-box__count{font-variant-numeric:tabular-nums}
