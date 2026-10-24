@@ -1,0 +1,1 @@
+.spinner{animation:1.7s linear infinite spinner}@keyframes spinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
