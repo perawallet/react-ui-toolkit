@@ -17,6 +17,7 @@
     "declarationDir": "dist/types",
     "allowSyntheticDefaultImports": true,
 
+    "strict": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
