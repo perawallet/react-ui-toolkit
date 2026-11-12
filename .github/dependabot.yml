@@ -37,12 +37,6 @@ updates:
           - "@types/react"
           - "@types/react-dom"
     ignore:
-      # ts-jest declares `typescript: ">=4.3 <7"`, so TypeScript 7 cannot resolve here however
-      # willing the rest of the toolchain is. rollup-plugin-typescript2 also drives the .d.ts
-      # emit through the compiler API, which TS 7 removed. Revisit when ts-jest widens its peer
-      # range; until then a TS 7 PR is unmergeable and would be reopened every week.
-      - dependency-name: typescript
-        versions: [">= 7"]
       # react and react-dom are peerDependencies here: the consuming app picks the version, and
       # this package deliberately supports 17, 18 and 19. Bumping the devDependency used for
       # tests and Storybook is a deliberate act, not a weekly chore.

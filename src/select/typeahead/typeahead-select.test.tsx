@@ -1,6 +1,5 @@
 import {fireEvent, render, screen, within} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../core/utils/test/testUtils";
 import type {TypeaheadSelectProps} from "./TypeaheadSelect";
@@ -15,9 +14,9 @@ describe("<TypeaheadSelect />", () => {
       {id: "3", title: "third-dropdown-option"}
     ],
     selectedOptions: [{id: "1", title: "test"}],
-    onSelect: jest.fn(),
-    onKeywordChange: jest.fn(),
-    onTagRemove: jest.fn(),
+    onSelect: vi.fn(),
+    onKeywordChange: vi.fn(),
+    onTagRemove: vi.fn(),
     typeaheadProps: {
       placeholder: "test placeholder",
       name: "test typeahead"

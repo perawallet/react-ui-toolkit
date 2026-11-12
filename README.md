@@ -122,7 +122,7 @@ published on npm as [@hipo/react-ui-toolkit](https://www.npmjs.com/package/@hipo
 Every component here originates from their work.
 
 The fork exists so Pera Wallet can ship changes it needs on its own schedule — currently React 19,
-date-fns 4, Storybook 10 and Biome. It is published under the `@perawallet` scope because the
+date-fns 4, Storybook 10 and oxlint/oxfmt. It is published under the `@perawallet` scope because the
 `@hipo` scope belongs to the upstream authors.
 
 The original MIT licence and copyright notice are retained verbatim in [LICENSE](/LICENSE).

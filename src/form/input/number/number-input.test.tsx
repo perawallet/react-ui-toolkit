@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import {testA11y} from "../../../core/utils/test/testUtils";
 import NumberInput from "./NumberInput";
@@ -14,7 +13,7 @@ describe('<NumberInput type={"number"} />', () => {
       locale: "en-EN"
     },
     maximumFractionDigits: 2,
-    onChange: jest.fn()
+    onChange: vi.fn()
   };
 
   it("should render correctly", () => {

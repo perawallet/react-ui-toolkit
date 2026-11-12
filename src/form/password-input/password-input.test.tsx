@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import {testA11y} from "../../core/utils/test/testUtils";
 import type {PasswordInputProps} from "../password-input/PasswordInput";
@@ -9,7 +8,7 @@ describe("<PasswordInput />", () => {
   const defaultPasswordInputProps: PasswordInputProps = {
     testid: "password-input",
     name: "password-input",
-    onChange: jest.fn(),
+    onChange: vi.fn(),
     placeholder: "Test",
     hideIcon: (
       <svg data-testid={"password-input.hide"} height={"16"} width={"16"}>

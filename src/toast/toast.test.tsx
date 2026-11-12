@@ -1,8 +1,7 @@
 import {waitFor} from "@testing-library/dom";
 import {render, screen} from "@testing-library/react";
-import type React from "react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
+import type React from "react";
 
 import {Button, Toast, ToastContextProvider, useToaster} from "..";
 import {DEFAULT_TOAST_TIMEOUT} from "./util/toastConstants";

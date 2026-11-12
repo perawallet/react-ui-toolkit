@@ -1,0 +1,53 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "react", "import", "jsx-a11y", "vitest"],
+  "categories": {
+    "correctness": "error"
+  },
+  "options": {
+    "typeAware": true,
+    "typeCheck": false
+  },
+  "env": {
+    "builtin": true,
+    "browser": true
+  },
+  "ignorePatterns": ["dist/**", "public/**", "storybook-static/**", "coverage/**"],
+  "rules": {
+    "react/exhaustive-deps": "warn",
+    "react/jsx-key": "warn",
+    "react/rules-of-hooks": "error",
+    "typescript/consistent-type-imports": [
+      "error",
+      {
+        "fixStyle": "separate-type-imports",
+        "disallowTypeAnnotations": false
+      }
+    ],
+    "typescript/no-non-null-assertion": "warn",
+    "typescript/no-explicit-any": "warn",
+    "typescript/ban-ts-comment": "warn",
+    "jsx-a11y/no-autofocus": "warn",
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/prefer-tag-over-role": "warn",
+    "vitest/no-focused-tests": "error",
+    "react/refs": "warn",
+    "react/set-state-in-effect": "warn",
+    "no-unused-vars": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "vitest/expect-expect": "off",
+    "vitest/require-mock-type-parameters": "off",
+    "vitest/no-conditional-expect": "warn",
+    "vitest/valid-expect": "warn",
+    "typescript/no-useless-default-assignment": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["stories/**"],
+      "rules": {
+        "react/rules-of-hooks": "warn"
+      }
+    }
+  ]
+}

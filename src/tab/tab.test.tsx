@@ -1,5 +1,4 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {Tab} from "..";
 import {testA11y} from "../core/utils/test/testUtils";
@@ -116,7 +115,7 @@ describe("<ControlledTab/>", () => {
     ],
     testid: "uncontrolled-tab",
     initialActiveTabIndex: 0,
-    onTabChange: jest.fn()
+    onTabChange: vi.fn()
   };
 
   it("should render correctly", () => {

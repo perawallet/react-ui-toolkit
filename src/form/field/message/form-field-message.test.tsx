@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
 import type {FormFieldMessageProps} from "./FormFieldMessage";
