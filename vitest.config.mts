@@ -7,6 +7,8 @@ export default defineConfig({
     globals: true,
     clearMocks: true,
     setupFiles: ["src/core/utils/test/setupTests.ts"],
-    alias: [{find: /^.+\.svg$/, replacement: "/src/core/utils/test/__mocks__/svgrMock.ts"}]
+    alias: [
+      {find: /^.+\.svg$/, replacement: "/src/core/utils/test/__mocks__/svgrMock.ts"}
+    ]
   }
 });

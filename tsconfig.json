@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "outDir": "build",
+    "rootDir": "src",
     "lib": ["es2020", "dom", "dom.iterable"],
     "sourceMap": true,
     "types": ["node", "vitest/globals"],
