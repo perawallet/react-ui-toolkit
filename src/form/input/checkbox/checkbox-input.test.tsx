@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import {testA11y} from "../../../core/utils/test/testUtils";
 import type {CheckboxInputProps} from "./CheckboxInput";
@@ -14,7 +13,7 @@ describe("<CheckboxInput />", () => {
       content: <p data-testid={"checkbox-input.content"}>{"Test"}</p>,
       inputProps: {name: "checkbox-input", htmlFor: "checkbox-input", value: "Test"}
     },
-    onSelect: jest.fn()
+    onSelect: vi.fn()
   };
 
   it("should render correctly", () => {

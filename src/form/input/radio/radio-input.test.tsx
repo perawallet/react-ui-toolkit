@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
@@ -10,7 +9,7 @@ describe("<RadioInput />", () => {
   const defaultRadioInputProps: RadioInputProps<string, any> = {
     testid: "radio-input",
     isSelected: false,
-    onSelect: jest.fn(),
+    onSelect: vi.fn(),
     item: {
       id: "radio-input",
       content: <p data-testid={"radio-input.content"}>{"Test"}</p>,

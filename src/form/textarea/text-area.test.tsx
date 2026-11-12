@@ -1,5 +1,4 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../core/utils/test/testUtils";
 import type {TextareaProps} from "./Textarea";
@@ -9,7 +8,7 @@ describe("<TextArea />", () => {
   const defaultTextAreaProps: TextareaProps = {
     testid: "text-area",
     name: "text-area",
-    onChange: jest.fn()
+    onChange: vi.fn()
   };
 
   it("should render correctly", () => {
@@ -23,8 +22,8 @@ describe("<TextArea />", () => {
   });
 
   it("onShiftEnter prop should work correctly", () => {
-    const handleShiftEnter = jest.fn();
-    const handleJustEnterPressed = jest.fn();
+    const handleShiftEnter = vi.fn();
+    const handleJustEnterPressed = vi.fn();
 
     render(
       <Textarea
@@ -47,8 +46,8 @@ describe("<TextArea />", () => {
   });
 
   it("onJustEnterPressed prop should work correctly", () => {
-    const handleShiftEnter = jest.fn();
-    const handleJustEnterPressed = jest.fn();
+    const handleShiftEnter = vi.fn();
+    const handleJustEnterPressed = vi.fn();
 
     render(
       <Textarea

@@ -52,7 +52,13 @@ module.exports = [
       (svgr.default || svgr)(),
       postcss({extract: path.resolve("dist/main.css")}),
       typescript({
-        exclude: ["**/*.test.ts", "**/*.test.tsx", "**/__mocks__/**", "node_modules"],
+        exclude: [
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/__mocks__/**",
+          "**/setupTests.ts",
+          "node_modules"
+        ],
         clean: true
       }),
       terser()

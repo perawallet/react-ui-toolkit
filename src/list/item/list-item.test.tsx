@@ -1,5 +1,4 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../core/utils/test/testUtils";
@@ -29,7 +28,7 @@ describe("<ListItem />", () => {
   });
 
   it("Can be clicked", async () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     const {container} = render(
       <ListItem
@@ -47,7 +46,7 @@ describe("<ListItem />", () => {
   });
 
   it("should run click event handler when enter key pressed", () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     render(
       <ListItem

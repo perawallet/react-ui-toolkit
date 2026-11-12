@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../../../core/utils/test/testUtils";
 import type {RadioGroupProps} from "./RadioGroup";
@@ -27,7 +26,7 @@ describe("<RadioGroup />", () => {
   const defaultRadioGroupProps: RadioGroupProps = {
     testid: "radio-group",
     items: radioGroupItems,
-    onSelect: jest.fn(),
+    onSelect: vi.fn(),
     selectedItem: null
   };
 

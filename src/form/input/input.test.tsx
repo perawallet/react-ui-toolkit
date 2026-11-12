@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import {testA11y} from "../../core/utils/test/testUtils";
 import Input from "./Input";
@@ -9,7 +8,7 @@ describe("<Input />", () => {
   const defaultInputProps: InputProps = {
     testid: "input",
     name: "input",
-    onChange: jest.fn()
+    onChange: vi.fn()
   };
 
   it("should render correctly", () => {

@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
 import type {FileInputProps} from "./FileInput";
@@ -10,7 +9,7 @@ describe("<FileInput />", () => {
     testid: "file-input",
     name: "file-input",
     htmlFor: "file-input",
-    onChange: jest.fn(),
+    onChange: vi.fn(),
     children: "Upload File"
   };
 

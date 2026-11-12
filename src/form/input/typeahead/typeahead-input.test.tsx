@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import {testA11y} from "../../../core/utils/test/testUtils";
@@ -10,7 +9,7 @@ describe("<TypeaheadInput />", () => {
   const defaultTypeaheadInputProps: TypeaheadInputProps = {
     testid: "typeahead-input",
     name: "typeahead-input",
-    onQueryChange: jest.fn(),
+    onQueryChange: vi.fn(),
     placeholder: "typeahead input"
   };
 
@@ -53,7 +52,7 @@ describe("<TypeaheadInput />", () => {
   });
 
   it("should run onQueryChange when value is changed", () => {
-    const handleQueryChange = jest.fn();
+    const handleQueryChange = vi.fn();
 
     render(
       <TypeaheadInput {...defaultTypeaheadInputProps} onQueryChange={handleQueryChange} />

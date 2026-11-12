@@ -1,6 +1,5 @@
-import {axe, toHaveNoViolations} from "jest-axe";
-
-expect.extend(toHaveNoViolations);
+import type {RunOptions} from "axe-core";
+import axe from "axe-core";
 
 /**
  * Validates against common a11y mistakes.
@@ -15,13 +14,11 @@ expect.extend(toHaveNoViolations);
  * @param {HTMLElement} container - The html element we want to test
  * @param {RunOptions} options - Axe run options
  * @returns {void}
- *
- * @see https://github.com/nickcolley/jest-axe#testing-react-with-react-testing-library
  */
-async function testA11y(container: HTMLElement, options?: Parameters<typeof axe>[1]) {
-  const results = await axe(container, options);
+async function testA11y(container: HTMLElement, options: RunOptions = {}) {
+  const results = await axe.run(container, options);
 
-  expect(results).toHaveNoViolations();
+  expect(results.violations).toEqual([]);
 }
 
 export {testA11y};

@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../../core/utils/test/testUtils";
 import Input from "../input/Input";
@@ -11,7 +10,7 @@ type FormFieldTestProps = Omit<FormFieldProps, "id"> & {testid: string};
 describe("<FormField />", () => {
   const defaultFormFieldProps: FormFieldTestProps = {
     testid: "form-field",
-    children: <Input onChange={jest.fn} name={"test"} testid={"form-field.input"} />
+    children: <Input onChange={vi.fn()} name={"test"} testid={"form-field.input"} />
   };
 
   it("should render correctly", () => {

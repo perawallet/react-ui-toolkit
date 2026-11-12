@@ -1,6 +1,5 @@
 import {fireEvent, render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom";
 
 import {testA11y} from "../core/utils/test/testUtils";
 import type {ButtonProps} from "./Button";
@@ -61,7 +60,7 @@ describe("<Button />", () => {
   });
 
   it("should not run click event handler while button is disabled", async () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     render(<Button onClick={handleClick} isDisabled={true} {...defaultButtonProps} />);
 
@@ -70,7 +69,7 @@ describe("<Button />", () => {
   });
 
   it("should not run click event handler while shouldDisplaySpinner is true", async () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     render(
       <Button onClick={handleClick} shouldDisplaySpinner={true} {...defaultButtonProps} />
@@ -81,7 +80,7 @@ describe("<Button />", () => {
   });
 
   it("should run click event handler correctly", async () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     render(<Button onClick={handleClick} {...defaultButtonProps} />);
 
@@ -90,8 +89,8 @@ describe("<Button />", () => {
   });
 
   it("should run mouseOver event handler correctly", () => {
-    const handleMouseOver = jest.fn();
-    const handleFocus = jest.fn();
+    const handleMouseOver = vi.fn();
+    const handleFocus = vi.fn();
 
     render(
       <Button
@@ -106,7 +105,7 @@ describe("<Button />", () => {
   });
 
   it("should run focus event handler correctly", () => {
-    const handleFocus = jest.fn();
+    const handleFocus = vi.fn();
 
     render(<Button onFocus={handleFocus} {...defaultButtonProps} />);
 
@@ -115,7 +114,7 @@ describe("<Button />", () => {
   });
 
   it("should run mouseUp event handler correctly", () => {
-    const handleMouseUp = jest.fn();
+    const handleMouseUp = vi.fn();
 
     render(<Button onMouseUp={handleMouseUp} {...defaultButtonProps} />);
 
@@ -124,7 +123,7 @@ describe("<Button />", () => {
   });
 
   it("should run mouseDown event handler correctly", () => {
-    const handleMouseDown = jest.fn();
+    const handleMouseDown = vi.fn();
 
     render(<Button onMouseDown={handleMouseDown} {...defaultButtonProps} />);
 
@@ -133,7 +132,7 @@ describe("<Button />", () => {
   });
 
   it("should run blur event handler correctly", () => {
-    const handleBlur = jest.fn();
+    const handleBlur = vi.fn();
 
     render(<Button onBlur={handleBlur} {...defaultButtonProps} />);
 
