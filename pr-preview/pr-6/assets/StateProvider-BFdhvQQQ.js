@@ -1,0 +1,4 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";import{t}from"./react-BGJ90fIb.js";import{t as n}from"./jsx-runtime-MKhVqBIO.js";function r({children:e,initialState:t}){let[n,r]=(0,i.useState)(t);return(0,a.jsx)(i.Fragment,{children:e(n,r)})}var i,a;function o(){return(o=e((()=>{i=t(),a=n(),r.__docgenInfo={description:``,methods:[],displayName:`StateProvider`,props:{children:{required:!0,tsType:{name:`signature`,type:`function`,raw:`(
+  state: State,
+  dispatch: React.Dispatch<React.SetStateAction<State>>
+) => React.ReactNode`,signature:{arguments:[{type:{name:`State`},name:`state`},{type:{name:`ReactDispatch`,raw:`React.Dispatch<React.SetStateAction<State>>`,elements:[{name:`ReactSetStateAction`,raw:`React.SetStateAction<State>`,elements:[{name:`State`}]}]},name:`dispatch`}],return:{name:`ReactReactNode`,raw:`React.ReactNode`}}},description:``},initialState:{required:!0,tsType:{name:`State`},description:``}}}})))()}export{o as n,r as t};
